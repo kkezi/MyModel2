@@ -7,7 +7,7 @@
 <title>사진추가 누르면 새로 열리는 팝업</title>
 </head>
 <body>
-<form action ="myPictureImg.jsp" method ="post" enctype = "multipart/form-data">
+<form action ="<%=request.getContextPath() %>/myMember/myPicturePro" method ="post" enctype = "multipart/form-data">
 <input type = "file" name = "mypicture">
 <input type = "submit" value = "사진등록">
 

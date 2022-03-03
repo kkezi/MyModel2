@@ -43,25 +43,17 @@ function checkPass(myf){
 
 </script>
 <body>
-<%
-String curlog = (String)session.getAttribute("mymemberId");
 
-if (curlog==null||curlog.trim().equals("")) { %>
-	<script>
-	alert("로그인이 필요합니다")
-	location.href = "<%=request.getContextPath() %>/myView/myMember/myLoginForm.jsp";
-	</script>
-<% } else { %>
 	
 <!-- passwd confirm start -->
 	<div class ='mymargin'>
-	<form autocomplete ="on" action = "<%=request.getContextPath()%>/myView/myMember/myPasswdPro.jsp" method ="post"
+	<form autocomplete ="on" action = "<%=request.getContextPath()%>/myMember/myPasswdPro" method ="post"
 	name = "myf" onsubmit = "return checkPass(this)"> 
 		<table>
 		<caption>비밀번호 변경</caption>
 		<tr>
 			<th>아이디 </th>
-			<td><input type ='text' id = "user_id" name="myid" size = '20' readonly ="readonly" value="<%=curlog%>"></td>
+			<td><input type ='text' id = "user_id" name="myid" size = '20' readonly ="readonly" value="${curlog}"></td>
 		</tr>
 		<tr>
 			<th>현재 비밀번호</th>
@@ -83,6 +75,6 @@ if (curlog==null||curlog.trim().equals("")) { %>
 		</table>
 	</form>
 	</div>
-	<% } %>
+	
 </body>
 </html>

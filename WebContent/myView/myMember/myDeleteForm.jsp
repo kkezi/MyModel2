@@ -9,23 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-String curlog = (String)session.getAttribute("mymemberId");
 
-if(curlog == null || curlog.trim().equals("") ) {%>
-	<script>
-	alert("로그인을 먼저 해주세요");
-	location.href = "<%=request.getContextPath()%>/myView/myMember/myLoginForm.jsp";
-	</script>
-<% } else { %>
 	<!-- login start -->
 	<div class ='login'>
-	<form autocomplete ="on" action = "<%=request.getContextPath()%>/myView/myMember/myDeletePro.jsp"> <!-- 저장된 아이디 사용 -->
+	<form autocomplete ="on" action = "<%=request.getContextPath()%>/myMember/myDeletePro"> <!-- 저장된 아이디 사용 -->
 		<table>
 		<caption>회원탈퇴</caption>
 		<tr>
 			<th>아이디 </th>
-			<td><input type ='text' id = "user_id" name="myid" size = '20' readonly = "readonly" value="<%=curlog%>"></td>
+			<td><input type ='text' id = "user_id" name="myid" size = '20' readonly = "readonly" value="${curlog}"></td>
 		</tr>
 		<tr>
 			<th>비밀번호</th>
@@ -40,6 +32,5 @@ if(curlog == null || curlog.trim().equals("") ) {%>
 	</form>
 	</div>
 
-<% } %>
 </body>
 </html>

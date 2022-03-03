@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type =" text/javascript" src ="/MyModel/myJs/myAjax.js"></script>
+<script type =" text/javascript" src ="<%=request.getContextPath() %>/myJs/myAjax.js"></script>
 </head>
 <script>
 function win_upload1() {
 	const myop = "width=500, height = 150, left=150,top=150";
-	open('<%=request.getContextPath()%>/mySingle/myPictureForm.jsp',"",myop);
+	open('<%=request.getContextPath()%>/myMember/myPictureForm',"",myop);
 } // end win_upload1
 
 function myidChk() {
@@ -22,7 +22,7 @@ function myidChk() {
 		myresult.style.color ="red"
 		myresult.innerHTML = "id는 8자리이상 입력해주세요"
 	} else {
-		myAjax("<%=request.getContextPath()%>/mySingle/readmyId.jsp", myparam, callback,'get')
+		myAjax("<%=request.getContextPath()%>/myMember/readmyId", myparam, callback,'get')
 	}
 } //end myidChk
 
