@@ -9,23 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
- int mynum = Integer.parseInt(request.getParameter("mynum"));
-MyBoardDao mbd = new MyBoardDao();
-MyBoard mb = mbd.selectMyBoard(mynum);//원래의 것 가져오기 
-
-
-%>
-
 
 <hr>
 <div class = "mymargin">
-	<form action = "<%=request.getContextPath() %>/myView/myBoard/myBoardReplyPro.jsp" method ="post"  
+	<form action = "<%=request.getContextPath() %>/myBoard/myBoardReplyPro" method ="post"  
 	name ="myf">
-	<input type ="hidden" name="mynum" value ="<%=mb.getMynum() %>" >
-	<input type ="hidden" name="myref" value ="<%=mb.getMyref() %>" >
-	<input type ="hidden" name="myreflevel" value ="<%=mb.getMyreflevel() %>" >
-	<input type ="hidden" name="myrefstep" value ="<%=mb.getMyrefstep() %>" >
+	<input type ="hidden" name="mynum" value ="${mb.mynum}" >
+	<input type ="hidden" name="myref" value ="${mb.myref}" >
+	<input type ="hidden" name="myreflevel" value ="${mb.myreflevel}" >
+	<input type ="hidden" name="myrefstep" value ="${mb.myrefstep}" >
 	<div>
 		
 		 <table >
@@ -36,7 +28,7 @@ MyBoard mb = mbd.selectMyBoard(mynum);//원래의 것 가져오기
 			<td><input type = 'password' name="mypass" id ="pass" size ='20'></td></tr>
 		
 			<tr><td class ="header">제목:</td>
-			<td><input type = 'text' name="mysubject" id = "user" size ='10' value ="re:"<%=mb.getMysubject() %>></td></tr>
+			<td><input type = 'text' name="mysubject" id = "user" size ='10' value ="re:"${mb.mysubject}></td></tr>
 		
 			<tr><td class = "header">내용:</td>
 			<td><textarea rows = "10" cols ="50" name = "mycontent" id="user"></textarea></td></tr>

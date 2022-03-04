@@ -9,7 +9,7 @@
 <body>
 <hr>
 <div class = "mymargin">
-	<form action = "<%=request.getContextPath() %>/myView/myBoard/myWritePro.jsp" method ="post" enctype = "multipart/form-data" 
+	<form action = "<%=request.getContextPath() %>/myBoard/myWritePro" method ="post" enctype = "multipart/form-data" 
 	name ="myf">
 	
 	<div>

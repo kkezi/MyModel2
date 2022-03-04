@@ -7,15 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% 
-int mynum = Integer.parseInt(request.getParameter("mynum"));
-
-%>
 
 <!-- delete start -->
 	<div class ='mymargin'>
-	<form autocomplete ="on" action = "<%=request.getContextPath()%>/myView/myBoard/myBoardDeletePro.jsp"> <!-- 저장된 아이디 사용 -->
-		<input type ="hidden" name ="mynum"	value = "<%=mynum%>">
+	<form autocomplete ="on" action = "<%=request.getContextPath()%>/myBoard/myBoardDeletePro"> <!-- 저장된 아이디 사용 -->
+		<input type ="hidden" name ="mynum"	value = "${mynum}">
 		<table>
 		<caption>게시물 삭제</caption>
 		

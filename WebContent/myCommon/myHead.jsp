@@ -139,7 +139,7 @@ function PreviewImage() {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="<%=request.getContextPath() %>/myMain" class="w3-bar-item w3-button w3-wide">KIC캠퍼스</a>
+    <a href="<%=request.getContextPath() %>/myMember/myMain" class="w3-bar-item w3-button w3-wide">KIC캠퍼스</a>
     
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
